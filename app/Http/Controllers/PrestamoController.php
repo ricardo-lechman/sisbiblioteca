@@ -7,59 +7,58 @@ use Illuminate\Http\Request;
 
 class PrestamoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $prestamos = Prestamo::all();
+        return view('prestamos.index', compact('prestamos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('prestamos.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $prestamo = new Prestamo();
+        $prestamo->Dni_Alumno = $request->Dni_Alumno;
+        $prestamo->Cod_Libro = $request->Cod_Libro;
+        $prestamo->Fecha_Prestamo = $request->Fecha_Prestamo;
+        $prestamo->Fecha_Devolucion = $request->Fecha_Devolucion;
+        $prestamo->save();
+
+        return redirect()->route('prestamos.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $prestamo = Prestamo::find($id);
+        return view('prestamos.show', compact('prestamo'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $prestamo = Prestamo::find($id);
+        return view('prestamos.edit', compact('prestamo'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $prestamo = Prestamo::find($id);
+        $prestamo->Dni_Alumno = $request->Dni_Alumno;
+        $prestamo->Cod_Libro = $request->Cod_Libro;
+        $prestamo->Fecha_Prestamo = $request->Fecha_Prestamo;
+        $prestamo->Fecha_Devolucion = $request->Fecha_Devolucion;
+        $prestamo->save();
+
+        return redirect()->route('prestamos.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $prestamo = Prestamo::find($id);
+        $prestamo->delete();
+
+        return redirect()->route('prestamos.index');
     }
 }

@@ -7,59 +7,113 @@ use Illuminate\Http\Request;
 
 class EjemplarController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $ejemplares = Ejemplar::all();
+        return view('ejemplares.index', compact('ejemplares'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('ejemplares.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $ejemplar = new Ejemplar();
+        $ejemplar->Numero_Ejemplar = $request->Numero_Ejemplar;
+        $ejemplar->Estado_Ejemplar = $request->Estado_Ejemplar;
+        $ejemplar->save();
+
+        return redirect()->route('ejemplares.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $ejemplar = Ejemplar::find($id);
+        return view('ejemplares.show', compact('ejemplar'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $ejemplar = Ejemplar::find($id);
+        return view('ejemplares.edit', compact('ejemplar'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $ejemplar = Ejemplar::find($id);
+        $ejemplar->Numero_Ejemplar = $request->Numero_Ejemplar;
+        $ejemplar->Estado_Ejemplar = $request->Estado_Ejemplar;
+        $ejemplar->save();
+
+        return redirect()->route('ejemplares.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $ejemplar = Ejemplar::find($id);
+        $ejemplar->delete();
+
+        return redirect()->route('ejemplares.index');
+    }
+}
+EstadoController
+php
+Copiar código
+namespace App\Http\Controllers;
+
+use App\Models\Estado;
+use Illuminate\Http\Request;
+
+class EstadoController extends Controller
+{
+    public function index()
+    {
+        $estados = Estado::all();
+        return view('estados.index', compact('estados'));
+    }
+
+    public function create()
+    {
+        return view('estados.create');
+    }
+
+    public function store(Request $request)
+    {
+        $estado = new Estado();
+        $estado->Disponibilidad = $request->Disponibilidad;
+        $estado->save();
+
+        return redirect()->route('estados.index');
+    }
+
+    public function show($id)
+    {
+        $estado = Estado::find($id);
+        return view('estados.show', compact('estado'));
+    }
+
+    public function edit($id)
+    {
+        $estado = Estado::find($id);
+        return view('estados.edit', compact('estado'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $estado = Estado::find($id);
+        $estado->Disponibilidad = $request->Disponibilidad;
+        $estado->save();
+
+        return redirect()->route('estados.index');
+    }
+
+    public function destroy($id)
+    {
+        $estado = Estado::find($id);
+        $estado->delete();
+
+        return redirect()->route('estados.index');
     }
 }
