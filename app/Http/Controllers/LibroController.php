@@ -7,59 +7,71 @@ use Illuminate\Http\Request;
 
 class LibroController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $libros = Libro::all();
+        return view('libros.index', compact('libros'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('libros.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $libro = new Libro();
+        $libro->Titulo = $request->Titulo;
+        $libro->Autor = $request->Autor;
+        $libro->Editorial = $request->Editorial;
+        $libro->Edicion = $request->Edicion;
+        $libro->Idioma = $request->Idioma;
+        $libro->Estado = $request->Estado;
+        $libro->Descripcion = $request->Descripcion;
+        $libro->CantPaginas = $request->CantPaginas;
+        $libro->CopiasDisp = $request->CopiasDisp;
+        $libro->save();
+
+        return redirect()->route('libros.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $libro = Libro::find($id);
+        return view('libros.show', compact('libro'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $libro = Libro::find($id);
+        return view('libros.edit', compact('libro'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $libro = Libro::find($id);
+        $libro->Titulo = $request->Titulo;
+        $libro->Autor = $request->Autor;
+        $libro->Editorial = $request->Editorial;
+        $libro->Edicion = $request->Edicion;
+        $libro->Idioma = $request->Idioma;
+        $libro->Estado = $request->Estado;
+        $libro->Descripcion = $request->Descripcion;
+        $libro->CantPaginas = $request->CantPaginas;
+        $libro->CopiasDisp = $request->CopiasDisp;
+        $libro->
+        return redirect()->route('libros.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $libro = Libro::find($id);
+        $libro->delete();
+
+        return redirect()->route('libros.index');
     }
 }
+
+
+
+
