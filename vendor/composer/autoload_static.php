@@ -26,12 +26,6 @@ class ComposerStaticInit05343e87493fe213f30c7853802c95cd
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-<<<<<<< HEAD
-=======
-        '2ceb5c5a6fb4dfb2119b186b81970c21' => __DIR__ . '/..' . '/laravel-lang/routes/helpers/functions.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
->>>>>>> 33ea3cdcfb67108f2e4a1464d06b5a4909aafc33
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '2ceb5c5a6fb4dfb2119b186b81970c21' => __DIR__ . '/..' . '/laravel-lang/routes/helpers/functions.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
