@@ -22,16 +22,7 @@ class LibroForRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'Cod_Libro' => 'required|string|max:10|', 
-            'Titulo' => 'required|string|max:256',
-            'Autor' => 'required|string|max:256',
-            'Editorial' => 'nullable|string|max:256',
-            'Edicion' => 'nullable|string|max:256',
-            'Idioma' => 'nullable|string|max:256',
-            'Estado' => 'required|string|max:256',
-            'Descripcion' => 'nullable|string',
-            'CantPaginas' => 'required|integer|min:1',
-            'CopiasDisp' => 'required|integer|min:0',
+            //
         ];
     }
 }
