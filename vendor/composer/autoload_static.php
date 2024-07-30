@@ -371,8 +371,8 @@ class ComposerStaticInitb169c22567ca72e89f4c71959ceda3bc
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -654,6 +654,7 @@ class ComposerStaticInitb169c22567ca72e89f4c71959ceda3bc
         'App\\Http\\Controllers\\AutorController' => __DIR__ . '/../..' . '/app/Http/Controllers/AutorController.php',
         'App\\Http\\Controllers\\CategoriaController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoriaController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\EditorialController' => __DIR__ . '/../..' . '/app/Http/Controllers/EditorialController.php',
         'App\\Http\\Controllers\\EjemplarController' => __DIR__ . '/../..' . '/app/Http/Controllers/EjemplarController.php',
         'App\\Http\\Controllers\\EstadoController' => __DIR__ . '/../..' . '/app/Http/Controllers/EstadoController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
