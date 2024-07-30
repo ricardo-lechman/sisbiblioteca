@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Libro;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -59,7 +59,8 @@ class LibroController extends Controller
         $libro->Descripcion = $request->Descripcion;
         $libro->CantPaginas = $request->CantPaginas;
         $libro->CopiasDisp = $request->CopiasDisp;
-        $libro->
+        // Completar con una asignación o método válido para $libro
+        $libro->save(); // Ejemplo de guardar los cambios
         return redirect()->route('libros.index');
     }
 
@@ -71,6 +72,7 @@ class LibroController extends Controller
         return redirect()->route('libros.index');
     }
 }
+
 
 
 

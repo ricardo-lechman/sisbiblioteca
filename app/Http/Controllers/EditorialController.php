@@ -1,60 +1,60 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Editorial;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CategoriaController extends Controller
+class EditorialController extends Controller
 {
     public function index()
     {
-        $categorias = Categoria::all();
-        return view('categorias.index', compact('categorias'));
+        $editoriales = Editorial::all();
+        return view('editoriales.index', compact('editoriales'));
     }
 
     public function create()
     {
-        return view('categorias.create');
+        return view('editoriales.create');
     }
 
     public function store(Request $request)
     {
-        $categoria = new Categoria();
-        $categoria->NombreCategoria = $request->NombreCategoria;
-        $categoria->Descripcion = $request->Descripcion;
-        $categoria->save();
+        $editorial = new Editorial();
+        $editorial->NombreEditorial = $request->NombreEditorial;
+        $editorial->Descripcion = $request->Descripcion;
+        $editorial->save();
 
-        return redirect()->route('categorias.index');
+        return redirect()->route('editoriales.index');
     }
 
     public function show($id)
     {
-        $categoria = Categoria::find($id);
-        return view('categorias.show', compact('categoria'));
+        $editorial = Editorial::find($id);
+        return view('editoriales.show', compact('editorial'));
     }
 
     public function edit($id)
     {
-        $categoria = Categoria::find($id);
-        return view('categorias.edit', compact('categoria'));
+        $editorial = Editorial::find($id);
+        return view('editoriales.edit', compact('editorial'));
     }
 
     public function update(Request $request, $id)
     {
-        $categoria = Categoria::find($id);
-        $categoria->NombreCategoria = $request->NombreCategoria;
-        $categoria->Descripcion = $request->Descripcion;
-        $categoria->save();
+        $editorial = Editorial::find($id);
+        $editorial->NombreEditorial = $request->NombreEditorial;
+        $editorial->Descripcion = $request->Descripcion;
+        $editorial->save();
 
-        return redirect()->route('categorias.index');
+        return redirect()->route('editoriales.index');
     }
 
     public function destroy($id)
     {
-        $categoria = Categoria::find($id);
-        $categoria->delete();
+        $editorial = Editorial::find($id);
+        $editorial->delete();
 
-        return redirect()->route('categorias.index');
+        return redirect()->route('editoriales.index');
     }
 }

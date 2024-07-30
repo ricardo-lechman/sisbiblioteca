@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Portal de Inicio')
 
 @section('content_header')
     <h1>Panel de control</h1>
@@ -16,5 +16,5 @@
 @stop
 
 @section('js')
-    <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
+    
 @stop
